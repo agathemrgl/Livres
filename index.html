@@ -25,19 +25,22 @@
       <p>
         17 April 2026
       </p>
+      <div class="reactions" data-entry="siddhartha">
+    <button class="react-btn" data-emoji="❤️">❤️ <span class="count"></span></button>
+    <button class="react-btn" data-emoji="👍">👍 <span class="count"></span></button>
+    <button class="react-btn" data-emoji="📝">📝 <span class="count"></span></button>
+    <button class="react-btn" data-emoji="🌶️">🌶️ <span class="count"></span></button>
+  </div>
     </div>
+    
     <div class="entry">
-      <a href="https://d2w9rnfcy7mm78.cloudfront.net/45391817/original_f5b5d5b784d9f974b8a62b754a4241b6.jpg?1776455372?bc=0" target="_blank">
         <img src="./sources/Siddhartha.jpg" alt="Siddhartha">
-      </a>
       <div class="caption">
         Siddhartha, Hermann Hesse - Éd livre de poche, 1922
       </div>
     </div>
     <div class="entry">
-      <a href="https://d2w9rnfcy7mm78.cloudfront.net/45391629/original_866c3c19708ba4297b593f2da454763a.jpg?1776454927?bc=0" target="_blank">
         <img src="./sources/Kerninon.jpg" alt="Kerninon">
-      </a>
       <div class="caption">
         Le passé est ma saison préférée, Julia Kerninon - Éd Julliard :)
       </div>
@@ -61,9 +64,7 @@
       </p>
     </div>
     <div class="entry">
-      <a href="https://d2w9rnfcy7mm78.cloudfront.net/13798102/original_1941e9237a4ae4ace88c5b35a2760236.png?1635796448?bc=0" target="_blank">
         <img src="./sources/Rocher.jpg">
-      </a>
       <div class="caption">
         Figure 10: Einstein’s Theory of Relativity
       </div>
@@ -84,9 +85,7 @@
       </p>
     </div>
     <div class="entry">
-      <a href="https://d2w9rnfcy7mm78.cloudfront.net/6505583/original_f84d37d3a3aec6bed054c1856e5c82d3.jpg?1584642781?bc=0" target="_blank">
         <img src="./sources/Drouar.jpg">
-      </a>
       <div class="caption">Figure 9: Nazlı's DIY rooftop desk
       </div>
     </div>
@@ -107,9 +106,7 @@
       </p>
     </div>
     <div class="entry">
-      <a href="https://d2w9rnfcy7mm78.cloudfront.net/5764042/original_6de9fba1750d1a94429889c76d2a24ee.jpg?1576975302?bc=0" target="_blank">
         <img src="./sources/Framont.png">
-      </a>
       <div class="caption">Figure 8: Eric as Multi, in front of Perfect Lovers
       </div>
     </div>
@@ -142,9 +139,7 @@
       </p>
     </div>
     <div class="entry">
-      <a href="https://d2w9rnfcy7mm78.cloudfront.net/3293196/original_0019c260dad0948818ab5b0f140593c7.jpg?1546466048?bc=1" target="_blank">
         <img src="./sources/Raybaud.jpg">
-      </a>
       <div class="caption">Figure 7: Felix Gonzalez-Torres, Lovers, 1988
       </div>
     </div>
@@ -168,9 +163,7 @@
       </p>
     </div>
     <div class="entry">
-      <a href="./sources/original_cccc477915846dfcf1123f66305d40f1.gif" target="_blank">
         <img src="./sources/Yon.jpeg">
-      </a>
       <div class="caption">
         Figure 6: An invite I made for an event based off Munari's book
       </div>
@@ -195,9 +188,7 @@
       </p>
     </div>
     <div class="entry">
-      <a href="./sources/original_cccc477915846dfcf1123f66305d40f1.gif" target="_blank">
         <img src="./sources/Berest.jpg">
-      </a>
       <div class="caption">
         Figure 6: An invite I made for an event based off Munari's book
       </div>
@@ -217,24 +208,18 @@
       </p>
     </div>
     <div class="entry">
-      <a href="https://d2w9rnfcy7mm78.cloudfront.net/2498054/original_10328efea0385e089a09619a57797c4a.jpg?1533047509?bc=1" target="_blank">
         <img src="./sources/Sahibdad.jpg">
-      </a>
       <div class="caption">Figure 5: Baroness Elsa von Freytag-Loringhoven
       </div>
     </div>
 
     <div class="entry">
-      <a href="https://d2w9rnfcy7mm78.cloudfront.net/2386564/original_899c1211945f37ae39ba76815188b3c3.jpg?1530678920?bc=1" target="_blank">
         <img src="./sources/Sahibdad2.webp">
-      </a>
       <div class="caption">Figure 3: Graphik und Objekte: Vervielfältigte Kunst
       </div>
     </div>
     <div class="entry">
-      <a href="https://d2w9rnfcy7mm78.cloudfront.net/2386563/original_771f6492133866674f5a1e01b8c79866.jpg?1530678917?bc=1" target="_blank">
         <img src="./sources/Sahibdad3.jpg">
-      </a>
       <div class="caption">
       </div>
     </div>
@@ -247,6 +232,11 @@
       <p><img src="./sources/Placeholder.jpg" id="uc-logo"></p>
     </div>
   </div>
+  <div id="image-modal" aria-hidden="true">
+    <span id="modal-close" aria-label="Fermer">×</span>
+    <img id="modal-img" src="" alt="">
+    <div id="modal-caption"></div>
+  </div>
 <script type="text/javascript" async="" src="./sources/analytics.js"></script><script type="text/javascript" async="" src="./sources/js"></script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async="" src="./sources/js(1)"></script>
@@ -256,6 +246,121 @@
   gtag('js', new Date());
 
   gtag('config', 'UA-57660834-3');
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var modal = document.getElementById('image-modal');
+    var modalImg = document.getElementById('modal-img');
+    var caption = document.getElementById('modal-caption');
+    var closeBtn = document.getElementById('modal-close');
+    var images = document.querySelectorAll('#entries img');
+
+    images.forEach(function(img) {
+      img.style.cursor = 'pointer';
+      img.addEventListener('click', function() {
+        modalImg.src = img.src;
+        modalImg.alt = img.alt || '';
+        var hideCaption = img.src.includes('Siddhartha') || img.src.includes('Kerninon');
+        caption.textContent = hideCaption ? '' : (img.alt || '');
+        modal.classList.add('open');
+        modal.setAttribute('aria-hidden', 'false');
+      });
+    });
+
+    function closeModal() {
+      modal.classList.remove('open');
+      modal.setAttribute('aria-hidden', 'true');
+    }
+
+    closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', function(event) {
+      if (event.target === modal) {
+        closeModal();
+      }
+    });
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape' && modal.classList.contains('open')) {
+        closeModal();
+      }
+    });
+  });
+</script>
+<script>
+  const SUPABASE_URL = 'https://ysjwqgaptdbbacwinqoj.supabase.co/rest/v1/'   // ← remplace
+  const SUPABASE_KEY = 'sb_publishable_FXXpGkbeUQEQ-tSmcER7bg_BmWiG5Xa'             // ← remplace
+
+  const headers = {
+    'apikey': SUPABASE_KEY,
+    'Authorization': `Bearer ${SUPABASE_KEY}`,
+    'Content-Type': 'application/json'
+  }
+
+  // Charger les compteurs d'une entrée
+  async function loadReactions(entryId) {
+    const res = await fetch(
+      `${SUPABASE_URL}/rest/v1/reactions?entry_id=eq.${entryId}`,
+      { headers }
+    )
+    const rows = await res.json()
+    rows.forEach(row => {
+      const btn = document.querySelector(
+        `.reactions[data-entry="${entryId}"] [data-emoji="${row.emoji}"] .count`
+      )
+      if (btn) {
+        btn.textContent = row.count > 0 ? row.count : ''
+        btn.style.display = row.count > 0 ? 'inline' : 'none'
+      }
+    })
+  }
+
+  // Voter / annuler le vote
+  async function vote(entryId, emoji, btn) {
+    const key = `voted_${entryId}_${emoji}`
+    const alreadyVoted = localStorage.getItem(key)
+    const countEl = btn.querySelector('.count')
+    const currentCount = parseInt(countEl.textContent, 10) || 0
+
+    if (alreadyVoted) {
+      btn.classList.remove('voted')
+      localStorage.removeItem(key)
+      const nextCount = Math.max(0, currentCount - 1)
+      countEl.textContent = nextCount > 0 ? nextCount : ''
+      countEl.style.display = nextCount > 0 ? 'inline' : 'none'
+      await fetch(`${SUPABASE_URL}/rest/v1/rpc/decrement_reaction`, {
+        method: 'POST',
+        headers,
+        body: JSON.stringify({ p_entry_id: entryId, p_emoji: emoji })
+      })
+    } else {
+      btn.classList.add('voted')
+      localStorage.setItem(key, '1')
+      const nextCount = currentCount + 1
+      countEl.textContent = nextCount
+      countEl.style.display = 'inline'
+      await fetch(`${SUPABASE_URL}/rest/v1/rpc/increment_reaction`, {
+        method: 'POST',
+        headers,
+        body: JSON.stringify({ p_entry_id: entryId, p_emoji: emoji })
+      })
+    }
+
+    loadReactions(entryId)
+  }
+
+  // Init : charger tous les compteurs + attacher les événements
+  document.querySelectorAll('.reactions').forEach(block => {
+    const entryId = block.dataset.entry
+    loadReactions(entryId)
+
+    // Restaurer l'état voté
+    block.querySelectorAll('.react-btn').forEach(btn => {
+      const emoji = btn.dataset.emoji
+      if (localStorage.getItem(`voted_${entryId}_${emoji}`)) {
+        btn.classList.add('voted')
+      }
+      btn.addEventListener('click', () => vote(entryId, emoji, btn))
+    })
+  })
 </script>
 
 
