@@ -168,3 +168,13 @@ strong,b {
     width: 22px;
   }
 }
+
+@media (max-width: 768px) {
+  .entry {
+    min-width: 240px;
+    max-width: 240px;
+    font-size: 1.08em;
+    line-height: 1.32em;
+  }
+}
+
